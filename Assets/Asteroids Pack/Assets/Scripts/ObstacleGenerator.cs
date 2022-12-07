@@ -48,8 +48,6 @@ public class ObstacleGenerator : MonoBehaviour
 
             }
             
-            
-            
             yield return new WaitForSeconds(delay);
         }
     }
