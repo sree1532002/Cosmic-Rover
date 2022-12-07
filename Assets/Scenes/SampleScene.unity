@@ -606,9 +606,8 @@ MonoBehaviour:
   - {fileID: 141316, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 3}
   - {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
   - {fileID: 130102, guid: fc446cfedcc195044b6e28c7248bd216, type: 3}
-  delay: 1
-  maxYLimit: 5
-  minYLimit: -5
+  coins: {fileID: 1052056720926770347, guid: fc89a722b6747144db0ee4de6f518136, type: 3}
+  delay: 2
 --- !u!1 &1693737426
 GameObject:
   m_ObjectHideFlags: 0
