@@ -421,7 +421,7 @@ MonoBehaviour:
   backgrounds:
   - {fileID: 3768598278309571342, guid: 61276b992f26d4746a0bad3167fbbd01, type: 3}
   - {fileID: 501920008604711420, guid: d7606b499e58d1245970353aaa74fc0e, type: 3}
-  offset: 10
+  offset: 23
   count: 2
 --- !u!4 &1194796910
 Transform:
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bad1e143cf6d284e8230d8f6f6097a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5
+  force: 8
   isAlive: 1
 --- !u!60 &1336989831
 PolygonCollider2D:
