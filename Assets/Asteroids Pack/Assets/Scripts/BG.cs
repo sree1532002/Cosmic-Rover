@@ -1,27 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public class BG : MonoBehaviour{
+    // List to store the prefab GameObjects for the backgrounds
+    public GameObject[] backgrounds;
 
-public class BG : MonoBehaviour
-{
-    public GameObject[] prefabs;
-    // Start is called before the first frame update
-    
-    public float delay;
+    // Offset to determine how far apart each background should be
+    public float offset = 500f;
+    public int count = 2;
+    void Start()
+    {
+        // Iterate through the list of prefabs and instantiate them in the scene
+        for (int i = 0; i <= count; i++)
+        {
+            GameObject prefab = Instantiate(backgrounds[i]);
+            prefab.transform.position = new Vector2(i * offset + 200, 0);
+        }
 
-    public float maxYLimit;
-    public float minYLimit;
-
-    Coroutine coroutine;
-
-    public void BeginGenerator(){
-        coroutine = StartCoroutine(Begin());
+        // Start a coroutine to continuously loop the backgrounds
+        StartCoroutine(BackgroundLoop());
     }
 
-    IEnumerator Begin(){
-        while(true){
-            Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(transform.position.x, Random.Range(minYLimit, maxYLimit)), transform.rotation);
-            yield return new WaitForSeconds(delay);
+    IEnumerator BackgroundLoop()
+    {
+        while (true)
+        {
+            // Find the first and last backgrounds in the scene
+            GameObject firstBackground = GameObject.Find("Background(Clone)");
+            GameObject lastBackground = GameObject.Find("Background(Clone)(" + (count - 1) + ")");
+
+            // Destroy the first background and instantiate a new one at the end of the scene
+            Destroy(firstBackground);
+            GameObject prefab = Instantiate(backgrounds[0]);
+            prefab.transform.position = new Vector2(lastBackground.transform.position.x + offset, 0);
+
+            yield return new WaitForSeconds(20f);
         }
-    }   
+    }
 }
