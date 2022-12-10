@@ -22,7 +22,9 @@ public class EdgeOfScreen : MonoBehaviour
 
         // Name Our Objects
         topCollider.name = "TopCollider";
+        topCollider.tag = "Edge";
         bottomCollider.name = "BottomCollider";
+        bottomCollider.tag = "Edge";
         // rightCollider.name = "RightCollider";
         // leftCollider.name = "LeftCollider";
 

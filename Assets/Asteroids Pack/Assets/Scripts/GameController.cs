@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public ObstacleGenerator obstacleGenerator;
 
     public float speed;
+    
     // Start is called before the first frame update
     void Start()
     {

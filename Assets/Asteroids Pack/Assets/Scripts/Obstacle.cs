@@ -10,7 +10,7 @@ public class Obstacle : MonoBehaviour
     {
         transform.Translate(Vector3.left * Time.deltaTime * GameController.instance.speed);
         
-        if(transform.position.x < -20)
+        if(transform.position.x < -20 || transform.position.x > 20 || transform.position.y > 11 || transform.position.y < -11)
         {
             Destroy(gameObject);
         }
