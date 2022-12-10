@@ -157,7 +157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1637403141}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &184164086
@@ -211,14 +211,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 184164084}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.9325433, y: 1.1441226, z: 0.12278569}
+  m_GameObject: {fileID: 268566002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1637403141}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &378483119
 PrefabInstance:
@@ -387,7 +387,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194796908
 GameObject:
@@ -421,8 +421,7 @@ MonoBehaviour:
   backgrounds:
   - {fileID: 3768598278309571342, guid: 61276b992f26d4746a0bad3167fbbd01, type: 3}
   - {fileID: 501920008604711420, guid: d7606b499e58d1245970353aaa74fc0e, type: 3}
-  offset: 23
-  count: 2
+  i: 0
 --- !u!4 &1194796910
 Transform:
   m_ObjectHideFlags: 0
@@ -436,7 +435,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336989827
 GameObject:
@@ -595,7 +594,6 @@ MonoBehaviour:
   - {fileID: 141316, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 3}
   - {fileID: 130102, guid: 04d0bf4be9447154188d86f6e3b8dce9, type: 3}
   - {fileID: 130102, guid: fc446cfedcc195044b6e28c7248bd216, type: 3}
-
   coins: {fileID: 1052056720926770347, guid: fc89a722b6747144db0ee4de6f518136, type: 3}
   delay: 2
 --- !u!1 &1637403140
@@ -630,7 +628,7 @@ Transform:
   - {fileID: 184164085}
   - {fileID: 1618765698}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1693737426
 GameObject:
