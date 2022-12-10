@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 469044}
   - component: {fileID: 11467940}
   - component: {fileID: -6912626663035913499}
-  - component: {fileID: -2672216901339020183}
+  - component: {fileID: 8690001724624261698}
   m_Layer: 0
   m_Name: Asteroid 3
   m_TagString: Obstacle
@@ -90,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 130102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -6.26}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 481134}
@@ -130,8 +130,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &-2672216901339020183
-BoxCollider2D:
+--- !u!60 &8690001724624261698
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,9 +153,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.5, y: 4}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.9894995, y: 1.2845445}
+      - {x: 0.16277674, y: 1.7685463}
+      - {x: -0.51251614, y: 1.478259}
+      - {x: -0.91596496, y: 0.76446617}
+      - {x: -1.7364292, y: -0.24859008}
+      - {x: -1.599458, y: -1.0460684}
+      - {x: -1.1603316, y: -1.5819721}
+      - {x: -0.55241674, y: -1.7376773}
+      - {x: 0.0456717, y: -1.5844303}
+      - {x: 0.78406364, y: -1.2146585}
+      - {x: 1.4140505, y: -0.56915087}
+      - {x: 1.41741, y: 0.077029526}
+      - {x: 1.5563176, y: 0.30891475}
+      - {x: 1.5137208, y: 0.79317003}
 --- !u!1 &153142
 GameObject:
   m_ObjectHideFlags: 0
