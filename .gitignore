@@ -3,3 +3,9 @@ UserSettings/
 Logs/
 
 Temp/
+obj/
+*.vsconfig
+*.sln
+*.csproj
+.vs/
+obj/Debug/
