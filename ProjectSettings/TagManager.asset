@@ -8,6 +8,9 @@ TagManager:
   - BG1
   - BG2
   - BG
+  - Edge
+  - Coin
+  - Rocket
   layers:
   - Default
   - TransparentFX

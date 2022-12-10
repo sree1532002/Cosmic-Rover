@@ -45,7 +45,7 @@ public class ObstacleGenerator : MonoBehaviour
                 SpawnObject(values[randomTypeIndex], positions[randomLaneIndex], xPosition[randomXPostitionIndex]);
 
                 positions.RemoveAt(randomLaneIndex);
-
+                
             }
             
             yield return new WaitForSeconds(delay);
