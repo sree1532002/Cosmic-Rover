@@ -18,26 +18,9 @@ public class Rocket : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
-        {
-            // Loop through all the touches
-            for (int i = 0; i < Input.touchCount; i++)
-            {
-                if (!isAlive)
-                    break;
-                Touch touch = Input.GetTouch(i);
-                if (touch.position.y > Screen.height / 2)
-                {
-                    rb2d.AddForce(Vector3.up * force);
-                }
-                else
-                {
-                    rb2d.AddForce(Vector3.down * force);
-                }
-            }
+        if(Input.GetMouseButton(0) && isAlive){
+            rb2d.AddForce(Vector3.up * force);
         }
-        
-        
     }
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Obstacle")){
