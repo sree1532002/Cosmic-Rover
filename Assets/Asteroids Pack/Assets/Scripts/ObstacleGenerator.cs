@@ -27,7 +27,7 @@ public class ObstacleGenerator : MonoBehaviour
         }
     }
     IEnumerator Begin(){
-        while(true){
+        while(true && Rocket.GetIsAlive()){
             float pos1 = Random.Range(minYLimit, minYLimit + range - 0.5f);
             float pos2 = Random.Range(minYLimit + range + 0.5f, minYLimit + range + range - 0.5f);
             float pos3 = Random.Range(minYLimit + range + range + 0.5f, maxYLimit - range -0.5f);

@@ -17,7 +17,7 @@ public class BG : MonoBehaviour{
 
     IEnumerator BackgroundLoop()
     {
-        while (true)
+        while (true && Rocket.GetIsAlive())
         {
             // Find the first and last backgrounds in the scene
             GameObject firstBackground = null;
