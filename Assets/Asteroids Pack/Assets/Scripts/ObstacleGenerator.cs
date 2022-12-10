@@ -10,8 +10,8 @@ public class ObstacleGenerator : MonoBehaviour
     
     public float delay;
 
-    private readonly float maxYLimit = 8;
-    private readonly float minYLimit = -8;
+    private readonly float maxYLimit = 10;
+    private readonly float minYLimit = -10;
     private float range;
 
     Coroutine coroutine;
@@ -33,7 +33,7 @@ public class ObstacleGenerator : MonoBehaviour
             float pos3 = Random.Range(minYLimit + range + range + 0.5f, maxYLimit - range -0.5f);
             float pos4 = Random.Range(maxYLimit - range + 0.5f, maxYLimit);
             List<float> positions = new() { pos1, pos2, pos3, pos4 };
-            List<string> values = new() { "asteroid", "coin", "coin" , "empty"};
+            List<string> values = new() { "asteroid", "coin" , "empty"};
             List<int> xPosition = new() { -1, 0, 1 };
 
             for (int i=0; i<4; i++)
@@ -54,12 +54,13 @@ public class ObstacleGenerator : MonoBehaviour
 
     public void SpawnObject(string type, float pos, int mult)
     {
+        float xPos = Random.Range(-5, 5);
         if (type.Equals("asteroid"))
         {
-            Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(transform.position.x + mult*pos, pos), transform.rotation);
+            Instantiate(prefabs[Random.Range(0, prefabs.Length)], new Vector3(transform.position.x + mult*xPos, pos), transform.rotation);
         } else if (type.Equals("coin"))
         {
-            Instantiate(coins, new Vector3(transform.position.x + mult * pos, pos), transform.rotation);
+            Instantiate(coins, new Vector3(transform.position.x + mult * xPos, pos), transform.rotation);
         }
         
     }

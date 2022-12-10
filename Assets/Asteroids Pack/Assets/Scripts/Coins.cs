@@ -14,5 +14,9 @@ public class Coins : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime * GameController.instance.speed);
+        if (transform.position.x < -20)
+        {
+            Destroy(gameObject);
+        }
     }
 }
