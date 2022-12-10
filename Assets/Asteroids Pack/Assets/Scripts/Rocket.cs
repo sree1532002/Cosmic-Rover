@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    Rigidbody2D rb2d;
+    public Rigidbody2D rb2d;
     public float force;
 
-    public bool isAlive = true;
+    private bool isAlive = true;
+    private long distance = 0;
     // Start is called before the first frame update
     void Start() 
     {
@@ -15,9 +16,18 @@ public class Rocket : MonoBehaviour
     }
 
     // Update is called once per frame
-
+    void FixedUpdate()
+    {
+        if (isAlive)
+        {
+            distance++;
+            if (distance % 25 == 0)
+                IncreaseScore();
+        }
+    }
     void Update()
     {
+       
         if (Input.touchCount > 0)
         {
             // Loop through all the touches
@@ -36,15 +46,31 @@ public class Rocket : MonoBehaviour
                 }
             }
         }
-        
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.CompareTag("Obstacle")){
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Edge"))
+        {
             Debug.Log("Game Over");
             isAlive = false;
-        }else{
+            distance = 0;
+        }
+        else if (collision.gameObject.CompareTag("Coin")) 
+        {
+            Debug.Log("Coin");
+        }
+        else
+        {
             Debug.Log(collision.gameObject.tag);
         }
+    }
+    public bool GetIsAlive()
+    {
+        return isAlive;
+    }
+
+    private void IncreaseScore()
+    {
+        Score.SetAmount(Score.GetAmount() + 1);
     }
 }
