@@ -98,7 +98,7 @@ public class Rocket : MonoBehaviour
 
     public void ResetPostion()
     {
-        this.transform.position = new Vector3(-3.112543f, 1.214123f, 0.1227857f);
+        this.transform.position = new Vector3(-1.612543f, 1.214123f, 0.1227857f);
         this.rb2d.SetRotation(0f);
     }
 }
