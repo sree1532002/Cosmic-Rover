@@ -9,12 +9,6 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
         Debug.Log("Play mode");
     }
-
-    public void Rules()
-    {
-        Debug.Log("Rules");
-    }
-
     public void Quit()
     {
         Debug.Log("Quit");
