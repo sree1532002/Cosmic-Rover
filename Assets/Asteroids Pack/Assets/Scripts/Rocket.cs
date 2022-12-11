@@ -79,9 +79,9 @@ public class Rocket : MonoBehaviour
     {
         Score.SetAmount(Score.GetAmount() + 1);
     }
-    public static void SetIsAlive(bool IsAlive)
+    public static void SetIsAlive(bool value)
     {
-        Rocket.isAlive = IsAlive;
+        isAlive = value;
     }
 
     public void ResetPostion()
