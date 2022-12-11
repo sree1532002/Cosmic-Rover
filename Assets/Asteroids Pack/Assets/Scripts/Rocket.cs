@@ -61,8 +61,20 @@ public class Rocket : MonoBehaviour
                 isAlive = false;
                 distance = 0;
                 GameOver.instance.ShowDialog();
-                this.transform.TransformVector(new Vector3(0f, 0f, 0f));
                 rb2d.velocity = new Vector3(0, 0, 0);
+                rb2d.angularVelocity = 0;
+                rb2d.gravityScale = 0;
+                GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+                GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+                foreach (GameObject obstacle in obstacles)
+                {
+                    Destroy(obstacle);
+                }
+                foreach (GameObject coin in coins)
+                {
+                    Destroy(coin);
+                }
+
             }
             else
             {
@@ -86,7 +98,7 @@ public class Rocket : MonoBehaviour
 
     public void ResetPostion()
     {
-        this.transform.position = new Vector3(-5.112543f, 1.214123f, 0.1227857f);
+        this.transform.position = new Vector3(-3.112543f, 1.214123f, 0.1227857f);
         this.rb2d.SetRotation(0f);
     }
 }

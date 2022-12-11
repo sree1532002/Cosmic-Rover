@@ -11,6 +11,8 @@ TagManager:
   - Edge
   - Coin
   - Rocket
+  - ContinuePrice
+  - NotEnoughCoin
   layers:
   - Default
   - TransparentFX
