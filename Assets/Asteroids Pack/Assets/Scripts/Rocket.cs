@@ -9,10 +9,12 @@ public class Rocket : MonoBehaviour
 
     public static bool isAlive = true;
     private long distance = 0;
+    public static Rocket instance;
     // Start is called before the first frame update
     void Start() 
     {
         rb2d = GetComponent<Rigidbody2D>();
+        instance = this;
     }
 
     // Update is called once per frame
@@ -59,6 +61,7 @@ public class Rocket : MonoBehaviour
                 isAlive = false;
                 distance = 0;
                 GameOver.instance.ShowDialog();
+                this.transform.TransformVector(new Vector3(0f, 0f, 0f));
                 rb2d.velocity = new Vector3(0, 0, 0);
             }
             else
@@ -79,5 +82,11 @@ public class Rocket : MonoBehaviour
     public static void SetIsAlive(bool IsAlive)
     {
         Rocket.isAlive = IsAlive;
+    }
+
+    public void ResetPostion()
+    {
+        this.transform.position = new Vector3(-5.112543f, 1.214123f, 0.1227857f);
+        this.rb2d.SetRotation(0f);
     }
 }

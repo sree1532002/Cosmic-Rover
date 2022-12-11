@@ -27,6 +27,11 @@ public class GameOver : MonoBehaviour
     public void Continue()
     {
         Debug.Log("Continue");
+        dialog.SetActive(false);
+        Debug.Log(GameObject.FindGameObjectWithTag("Rocket").transform);
+        Rocket.SetIsAlive(true);
+        Rocket.instance.ResetPostion();
+
     }
 
     public void Home()
