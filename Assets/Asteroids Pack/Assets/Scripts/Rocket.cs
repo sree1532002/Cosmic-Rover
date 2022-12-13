@@ -28,16 +28,15 @@ public class Rocket : MonoBehaviour
             if (distance % 25 == 0)
                 IncreaseScore();
         }
-    }
-    void Update()
-    {
+
+
         if (Input.touchCount > 0 && isAlive)
         {
-            
+
             // Loop through all the touches
             for (int i = 0; i < Input.touchCount; i++)
             {
-                
+
                 Touch touch = Input.GetTouch(i);
                 if (touch.position.y > Screen.height / 2)
                 {
@@ -48,12 +47,10 @@ public class Rocket : MonoBehaviour
                     rb2d.AddForce(Vector3.down * force);
                 }
             }
-        }else if(Input.GetKeyDown(KeyCode.UpArrow) && isAlive)
-        {
-            rb2d.AddForce(Vector3.up * force);
         }
-
+        
     }
+
     private void OnCollisionEnter2D(Collision2D collision){
         if (Rocket.GetIsAlive())
         {
