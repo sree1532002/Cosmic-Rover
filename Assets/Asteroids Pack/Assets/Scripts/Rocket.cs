@@ -13,8 +13,10 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start() 
     {
+        
         rb2d = GetComponent<Rigidbody2D>();
         instance = this;
+        ResetPostion();
     }
 
     // Update is called once per frame
@@ -98,7 +100,7 @@ public class Rocket : MonoBehaviour
 
     public void ResetPostion()
     {
-        this.transform.position = new Vector3(-1.612543f, 1.214123f, 0.1227857f);
+        this.transform.position = new Vector3(-1.1f, -0.46f);
         this.rb2d.SetRotation(0f);
     }
 }

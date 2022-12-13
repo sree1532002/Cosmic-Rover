@@ -11,6 +11,7 @@ public class GameOver : MonoBehaviour
     public static GameOver instance;
     public GameObject dialog;
     public GameObject notEnough;
+    public GameObject background;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class GameOver : MonoBehaviour
         Debug.Log("Restart");
         notEnough.SetActive(false);
         dialog.SetActive(false);
+        BG.instance.RestartBackGround();
         Score.SetAmount(0);
         Rocket.SetIsAlive(true);
         Rocket.instance.ResetPostion();
