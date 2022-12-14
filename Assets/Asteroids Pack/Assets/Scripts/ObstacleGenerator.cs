@@ -28,6 +28,7 @@ public class ObstacleGenerator : MonoBehaviour
     }
     IEnumerator Begin(){
         while(true){
+            
             float pos1 = Random.Range(minYLimit, minYLimit + range - 0.5f);
             float pos2 = Random.Range(minYLimit + range + 0.5f, minYLimit + range + range - 0.5f);
             float pos3 = Random.Range(minYLimit + range + range + 0.5f, maxYLimit - range -0.5f);
@@ -41,8 +42,8 @@ public class ObstacleGenerator : MonoBehaviour
                 int randomLaneIndex = Random.Range(0, positions.Count);
                 int randomTypeIndex = Random.Range(0, values.Count);
                 int randomXPostitionIndex = Random.Range(0, xPosition.Count);
-
-                SpawnObject(values[randomTypeIndex], positions[randomLaneIndex], xPosition[randomXPostitionIndex]);
+                if(Rocket.GetIsAlive())
+                    SpawnObject(values[randomTypeIndex], positions[randomLaneIndex], xPosition[randomXPostitionIndex]);
 
                 positions.RemoveAt(randomLaneIndex);
                 

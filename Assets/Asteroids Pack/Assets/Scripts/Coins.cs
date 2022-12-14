@@ -16,10 +16,12 @@ public class Coins : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * GameController.instance.speed);
-        if (transform.position.x < -20 || transform.position.x>20 || transform.position.y>11 || transform.position.y<-11)
-        {
-            Destroy(gameObject);
+        if (Rocket.GetIsAlive()) { 
+            transform.Translate(Vector3.left * Time.deltaTime * GameController.speed);
+            if (transform.position.x < -20 || transform.position.x>20 || transform.position.y>11 || transform.position.y<-11)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -30,7 +32,7 @@ public class Coins : MonoBehaviour
         // Checks if coin has been taken. (Because player can re-enter coin while coin destroy animation is playing)
         if (!taken)
         {
-            if (col.CompareTag("Rocket"))
+            if (col.CompareTag("Rocket") && Rocket.GetIsAlive())
             {
                 // Increases player wallet amount.
                 Wallet.SetAmount(Wallet.GetAmount() + 1);

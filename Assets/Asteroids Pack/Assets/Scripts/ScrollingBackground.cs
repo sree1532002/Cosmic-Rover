@@ -16,6 +16,7 @@ public class ScrollingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        material.SetTextureOffset("_MainTex", material.GetTextureOffset("_MainTex") + (Vector2.left * Time.deltaTime * GameController.instance.speed * speed));
+        if(Rocket.GetIsAlive())
+            material.SetTextureOffset("_MainTex", material.GetTextureOffset("_MainTex") + (Vector2.left * Time.deltaTime * GameController.speed * speed));
     }
 }

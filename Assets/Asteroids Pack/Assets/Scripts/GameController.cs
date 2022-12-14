@@ -8,13 +8,15 @@ public class GameController : MonoBehaviour
 
     public ObstacleGenerator obstacleGenerator;
 
-    public float speed;
+    public static float speed;
     
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         obstacleGenerator.BeginGenerator();
+        Rocket.SetIsAlive(true);
+        speed = 3;
     }
 
     // Update is called once per frame
